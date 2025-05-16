@@ -7,4 +7,5 @@ export const propertySchema = z.object({
   wc: z.string().transform((val) => parseInt(val, 10)),
   parking: z.string().transform((val) => parseInt(val, 10)),
   room: z.string().transform((val) => parseInt(val, 10)),
+  image : z.string()
 });

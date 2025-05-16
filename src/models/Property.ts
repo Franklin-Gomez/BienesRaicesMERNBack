@@ -8,7 +8,7 @@ export interface Iproperty  extends Document {
     parking : number,
     wc : number,
     room : number
-
+    image: string
 }
 
 const propertySchema = new mongoose.Schema({
@@ -40,6 +40,11 @@ const propertySchema = new mongoose.Schema({
     room : { 
         type : Number,
         required : true 
+    },
+
+    image : {
+        type : String,
+        required : true
     }
 
 })

@@ -9,6 +9,8 @@ export class PropertyController {
 
         const modelProperty =  new Property( dataParse )
 
+        console.log(modelProperty)
+
         try {
             await modelProperty.save()
 
