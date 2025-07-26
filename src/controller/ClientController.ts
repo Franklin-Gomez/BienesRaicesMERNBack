@@ -22,4 +22,27 @@ export class ClientController  {
         }
 
     }
+
+    static async deleteClient ( req : Request , res : Response) {
+        
+        const { id } = req.params
+
+        try {
+
+            const cliente = await Contact.findById(id)
+
+            if(!cliente) {
+                res.status(404).json({ error: "Cliente no encontrado" })
+                return
+            }
+
+            res.status(200).json({ message: "Cliente eliminado correctamente" })
+
+        } catch (error) {
+
+            res.status(500).json({ error : "Hubo un error al eliminar el cliente"})
+
+        }
+
+    }
 }
