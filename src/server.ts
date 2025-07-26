@@ -4,6 +4,7 @@ import { connectDB } from "./db"
 import propertyRoute from './routes/PropertyRouter'
 import contacRoute from './routes/ContactRouter'
 import userRoute from './routes/AuthRoutes'
+import clientRoute from './routes/ClientRoutes'
 import cors from 'cors'
 
 // leer las variables de entorno
@@ -25,3 +26,4 @@ app.use( express.json() )
 app.use('/api/property' , propertyRoute ) // use = support method HTTP
 app.use('/api/contact' , contacRoute ) // use = support method HTTP
 app.use('/api/user' , userRoute ) // use = support method HTTP
+app.use('/api/client' , clientRoute  ) // use = support method HTTP

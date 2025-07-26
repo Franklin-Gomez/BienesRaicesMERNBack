@@ -17,6 +17,7 @@ export class AuthControllers  {
         }
 
         const user = new User( req.body )
+
         user.password = await  hasPassword( req.body.password)
 
         await user.save()
@@ -58,9 +59,6 @@ export class AuthControllers  {
             res.status(500).json({ error : "Hubo un error"})
 
         }
-
-
-
 
     }
 

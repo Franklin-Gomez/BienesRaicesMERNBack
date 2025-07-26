@@ -3,13 +3,12 @@ import { propertySchema } from "../schema"
 import { Property } from "../models/Property"
 
 export class PropertyController { 
+    
     static createProperty = async ( req : Request , res : Response ) => {
 
         const dataParse = propertySchema.parse( req.body )
 
         const modelProperty =  new Property( dataParse )
-
-        console.log(modelProperty)
 
         try {
             await modelProperty.save()
@@ -36,7 +35,6 @@ export class PropertyController {
             res.status(400).send("Error al Traer las Propiedad")
         } 
 
-        
     }
 
     static getOneProperty = async ( req : Request , res : Response ) => { 

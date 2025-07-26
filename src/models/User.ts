@@ -6,7 +6,6 @@ interface userInterface {
     password : string
 }
 
-
 const  userSchema   : Schema = new mongoose.Schema({
     
     name : { 
