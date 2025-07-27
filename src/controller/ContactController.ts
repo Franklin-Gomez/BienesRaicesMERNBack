@@ -7,6 +7,7 @@ export class ContacController {
         try {
             
             const contact = new Contact( req.body )
+            
             await contact.save()
 
             res.status(200).json({ message: "Contacto Guardado Satisfactoriamente" });
