@@ -37,6 +37,21 @@ export class PropertyController {
 
     }
 
+    static getThreeProperty = async ( req : Request , res : Response) => {
+
+        try {
+            const properties = await Property.find({}).limit(3)
+
+            console.log(properties)
+
+            res.status(200).json(properties)
+        
+        } catch (error) {
+            res.status(400).send("Error al Traer las Propiedad")
+        }
+
+    }
+
     static getOneProperty = async ( req : Request , res : Response ) => { 
 
         try {
@@ -57,7 +72,7 @@ export class PropertyController {
 
         } catch (error) {
 
-            res.status(400).send("Error al Treaer la Propiedad")
+            res.status(400).send("Error al Treaer la Propiedad 2x")
 
         }
 
@@ -127,4 +142,7 @@ export class PropertyController {
         }
         
     }
+    
+
+
 }
